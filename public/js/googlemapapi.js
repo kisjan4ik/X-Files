@@ -1,17 +1,17 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-use-before-define */
 "use strict";
 var locations = [];
 let map;
+var alien = "../images/aliensmaller.png";
+var marker, i;
 $.ajax({
   url: "/api/sighting",
   method: "GET"
 }).then(function (data) {
-  console.log(data);
-  for (let i = 0; i < data.length; i++) {
+  console.log(data)
+  for (let i = 0; i < 1001; i++) {
     var currentlocation = [];
-    currentlocation = [`${data[i].latitude}`, data[i].longitude];
-    locations.push(currentlocation);
+    currentlocation = [`${data[i].latitude}`, data[i].longitude, data[i].city];
+    locations.push(currentlocation)
   } return locations;
   // console.log(locations);
 }).then(function (locations) {
@@ -362,18 +362,19 @@ $.ajax({
     ]
   });
   console.log(locations);
-  for (i = 0; i < locations.length; i++) {
+  for (let i = 0; i < locations.length; i++) {
     marker = new google.maps.Marker({
       position: new google.maps.LatLng(locations[i][0], locations[i][1]),
+      animation: google.maps.Animation.DROP,
+      title: locations[i][2],
+      icon: alien,
       map: map
     });
-    google.maps.event.addListener(marker, "click", (function (marker, i) {
+    google.maps.event.addListener(marker, 'click', (function (marker, i) {
       return function () {
         infowindow.setContent(locations[i][0]);
         infowindow.open(map, marker);
-      };
+      }
     })(marker, i));
   }
 });
-
-var marker, i;
