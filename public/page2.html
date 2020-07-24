@@ -15,18 +15,35 @@
     <style>
         #map {
             height: 100%;
+            width: 70%;
+            margin-left: 30px;
+            float: left;
+            position: relative;
+            overflow:auto;
         }
 
         html,
         body {
-            height: 80%;
+            height: 90%;
             margin: 0;
             padding: 0;
+        }
+
+        aside {
+            position: absolute; 
+            width:30%;
+            top: 90px; 
+            right: 0px; 
+            z-index: 99;
+        }
+
+        h2 {
+            text-align: center;
         }
     </style>
 </head>
 
-<body>
+<body style="background-color: black;">
     <div class="container-fluid">
         <div class="row bg-dark">
             <div class="col-md-8 p-0">
@@ -56,15 +73,43 @@
                     <i class="fas fa-user-circle fa-2x text-white mt-1 ml-2 mb-2"></i></a>
             </div>
         </div>
+
     </div>
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-4 mx-auto text-center">
-                <h1>Page Two</h1>
+                <h1 style="color:rgb(7, 185, 7);">UFO Sightings <img src="../images/ufo-animated-gif.gif" alt="Alien"
+                        style="width:60px; height:60px"></h1>
             </div>
         </div>
+        
     </div>
+    <aside>
+        <div>
+            <h2>You Ordered:</h2>
+
+            <ul>
+                {{#each burgers}}
+                {{#unless this.devour}}
+                {{> burgers/burger-block devour=true}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div>
+            <h2>Devoured:</h2>
+
+            <ul>
+                {{#each burgers}}
+                {{#if devour}}
+                {{> burgers/burger-block devour=false}}
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </aside>
     <div id="map"></div>
+
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
