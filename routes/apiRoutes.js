@@ -8,7 +8,8 @@ var db = require("../models");
 //Get route to bring user to main dashboard
 router.get("/hello", function (req, res) {
     var hbsobject = {
-        users: data
+        name: Blob,
+        color: blue
     };
     console.log(users);
     res.render("dashboard", hbsobject);
