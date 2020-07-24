@@ -5,8 +5,13 @@ const router = require("express").Router();
 var db = require("../models");
 // use this file to code your API routes
 
-router.get("/", function (req, res, next) {
-    res.render("#");
+//Get route to bring user to main dashboard
+router.get("/hello", function (req, res) {
+    var hbsobject = {
+        users: data
+    };
+    console.log(users);
+    res.render("dashboard", hbsobject);
 });
 // console.log(db);
 
