@@ -11,7 +11,7 @@
         content="This is a ready to use boiler plate that uses Passport for User Authentication and MySQL with Sequelize for Data Storage." />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/superhero/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/d7973d9d11.js" crossorigin="anonymous"></script>
-    <title>Auth with Passport</title>
+    <title>X-Files</title>
     <style>
         #map {
             height: 100%;
@@ -40,6 +40,12 @@
         h2 {
             text-align: center;
         }
+
+        #alien1 {
+            position:fixed;
+            right:0px;
+            bottom:0px;
+        }
     </style>
 </head>
 
@@ -48,7 +54,7 @@
         <div class="row bg-dark">
             <div class="col-md-8 p-0">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-2">
-                    <a class="navbar-brand ml-3" href="/">Auth with Passport</a>
+                    <a class="navbar-brand ml-3" href="/">X-Files</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -59,7 +65,7 @@
                                 <a class="nav-link" href="/">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-primary" href="/user/page2">Page Two</a>
+                                <a class="nav-link text-primary" href="/user/page2">UFO Sightings</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/auth/logout">Logout</a>
@@ -79,14 +85,14 @@
         <div class="row">
             <div class="col-md-4 mx-auto text-center">
                 <h1 style="color:rgb(7, 185, 7);">UFO Sightings <img src="../images/ufo-animated-gif.gif" alt="Alien"
-                        style="width:60px; height:60px"></h1>
+                        style="width:70px; height:70px"></h1>
             </div>
         </div>
         
     </div>
     <aside>
         <div>
-            <h2>You Ordered:</h2>
+            <h2></h2>
 
             <ul>
                 {{#each burgers}}
@@ -107,9 +113,10 @@
                 {{/each}}
             </ul>
         </div>
+        
     </aside>
     <div id="map"></div>
-
+    <img src="../images/ufo-flying-saucer-animated-gif-8.gif" alt="Alien1" id="alien1">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -124,7 +131,8 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoRbLByFQP8mGi3U13JCZrx4Zm2Ntp_qk&callback=initMap" async
         defer></script>
     <script src="../js/googlemapapi.js"></script>
-
+    <script src="../js/animation.js"></script>
+    
 </body>
 
 </html>
