@@ -16,8 +16,8 @@ router.get("/", function (req, res) {
 });
 // console.log(db);
 
-//Get route for getting all of the UFO sightings
-router.get("/sighting", function (req, res) {
+// Get route for getting all of the UFO sightings
+router.get("/sightings", function (req, res) {
     //findAll returns all entries for our table when used with no options
     db.Ufo.findAll({})
         .then(function (response) {
@@ -28,17 +28,17 @@ router.get("/sighting", function (req, res) {
 });
 
 //POST ROUTE FOR SAVING NEW ENCOUNTERS TO OUR DATABASE
-router.post("/api/sightings", function(req, res) {
-    //Create takes in an argument of an object describing the item we want to insert
-    //into our table
-    db.Ufo.create({
-        text: req.body.text
-    }).then(function(dbUfo) {
-            //logging out our result to see what we're working with
-            console.log(dbUfo);
-            res.json(dbUfo);
-        });
-});
+// router.post("/api/sightings", function(req, res) {
+//     //Create takes in an argument of an object describing the item we want to insert
+//     //into our table
+//     db.Ufo.create({
+//         text: req.body.text
+//     }).then(function(dbUfo) {
+//             //logging out our result to see what we're working with
+//             console.log(dbUfo);
+//             res.json(dbUfo);
+//         });
+// });
 //Delete Route for deleting encounters from our application. We can get the id of the todo 
 //to be deleted from the req.params.id
 router.delete("/api/sightings/:id", function(req, res) {

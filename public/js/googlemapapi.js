@@ -1,7 +1,7 @@
 "use strict";
 var locations = [];
 let map;
-var alien = "../images/aliensmaller.png";
+var alien = "/images/aliensmaller.png";
 var marker, i;
 $.ajax({
     url: "/api/sighting",
@@ -381,3 +381,4 @@ $.ajax({
         })(marker, i));
     }
 })
+
