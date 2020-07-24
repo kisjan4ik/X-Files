@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const emailInput = document.querySelector("#emailInput");
 const passwordInput = document.querySelector("#passwordInput");
 const submitBtn = document.querySelector("#submitBtn");
