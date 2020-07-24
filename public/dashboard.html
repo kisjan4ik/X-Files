@@ -11,6 +11,8 @@
     <meta name="description"
         content="This is a ready to use boiler plate that uses Passport for User Authentication and MySQL with Sequelize for Data Storage." />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/superhero/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d7973d9d11.js" crossorigin="anonymous"></script>
     <title>Dashboard_X-Files</title>
 </head>
@@ -52,6 +54,53 @@
                 <h1>User Dashboard</h1>
             </div>
         </div>
+    </div>
+    <div>
+        <div class="jumbotron jumbotron-fluid grey darken-3">
+            <div class="container">
+                <h1 class="display-4 text-center text-success">Welcome back {{{ user }}}</h1>
+                <p class="lead text-center">Here we will use handlebars to append dynamic info</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card small grey darken-3">
+                <div class="card-content green-text">
+                    <span class="card-title green-text">Alien questions</span>
+                    <p>Here we will use handlebars to append dynamic info</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">possible link to site where we get info?</a>
+                    <a href="#">possible link to site where we get info?</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="card small grey darken-3">
+              <div class="card-content green-text">
+                <span class="card-title green-text">Alien facts</span>
+                <p>Here we will use handlebars to append dynamic info.</p>
+              </div>
+              <div class="card-action">
+                <a href="#">possible link to site where we get info?</a>
+                <a href="#">possible link to site where we get info?</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <div class="card small grey darken-3">
+              <div class="card-content green-text">
+                <span class="card-title green-text">area 51</span>
+                <p>I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.</p>
+              </div>
+              <div class="card-action">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+              </div>
+            </div>
+          </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
