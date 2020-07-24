@@ -6,7 +6,7 @@ var db = require("../models");
 // use this file to code your API routes
 
 //Get route to bring user to main dashboard
-router.get("/hello", function (req, res) {
+router.get("/", function (req, res) {
     var hbsobject = {
         name: Blob,
         color: blue
