@@ -30,3 +30,5 @@ function showCheckboxes1() {
     expanded1= false;
   }
 }
+showCheckboxes();
+showCheckboxes1();

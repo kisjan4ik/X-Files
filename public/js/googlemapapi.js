@@ -1,17 +1,17 @@
 "use strict";
 var locations = [];
 let map;
-var alien = "../images/aliensmaller.png";
+var alien = "/images/aliensmaller.png";
 var marker, i;
 $.ajax({
-  url: "/api/sighting",
+  url: "/api/sightings",
   method: "GET"
 }).then(function (data) {
-  console.log(data)
+  console.log(data);
   for (let i = 0; i < 1001; i++) {
     var currentlocation = [];
     currentlocation = [`${data[i].latitude}`, data[i].longitude, data[i].city];
-    locations.push(currentlocation)
+    locations.push(currentlocation);
   } return locations;
   // console.log(locations);
 }).then(function (locations) {
@@ -370,11 +370,11 @@ $.ajax({
       icon: alien,
       map: map
     });
-    google.maps.event.addListener(marker, 'click', (function (marker, i) {
+    google.maps.event.addListener(marker, "click", (function (marker, i) {
       return function () {
         infowindow.setContent(locations[i][0]);
         infowindow.open(map, marker);
-      }
+      };
     })(marker, i));
   }
 });
