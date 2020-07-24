@@ -4,7 +4,6 @@
 var locations = [];
 let map;
 $.ajax({
-  // eslint-disable-next-line linebreak-style
   url: "/api/sighting",
   method: "GET"
 }).then(function (data) {
