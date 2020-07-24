@@ -6,47 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Auth with Passport" />
     <meta property="og:url" content="https://passport-auth-boiler-plate.herokuapp.com/" />
-    <meta property="og:image" content="./images/passport_auth1.jpg" />
+    <meta property="og:image" content="../images/passport_auth1.jpg" />
     <meta name="description"
         content="This is a ready to use boiler plate that uses Passport for User Authentication and MySQL with Sequelize for Data Storage." />
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/superhero/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/d7973d9d11.js" crossorigin="anonymous"></script>
     <title>X-Files</title>
-    <style>
-        #map {
-            height: 100%;
-            width: 70%;
-            margin-left: 30px;
-            float: left;
-            position: relative;
-            overflow:auto;
-        }
 
-        html,
-        body {
-            height: 90%;
-            margin: 0;
-            padding: 0;
-        }
-
-        aside {
-            position: absolute; 
-            width:30%;
-            top: 90px; 
-            right: 0px; 
-            z-index: 99;
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        #alien1 {
-            position:fixed;
-            right:0px;
-            bottom:0px;
-        }
-    </style>
 </head>
 
 <body style="background-color: black;">
@@ -88,32 +56,144 @@
                         style="width:70px; height:70px"></h1>
             </div>
         </div>
-        
+
     </div>
     <aside>
-        <div>
-            <h2></h2>
+        <form>
+            <h3 style="color:rgb(7, 185, 7);">Decades of the sightings</h3>
+            <div class="select"></div>
+            <div class="selectBox" onclick="showCheckboxes()">
+                <select size="1">
+                    <option>Select an option</option>
+                </select>
+                <div class="overSelect"></div>
+            </div>
+            <div id="checkboxes">
 
-            <ul>
-                {{#each burgers}}
-                {{#unless this.devour}}
-                {{> burgers/burger-block devour=true}}
-                {{/unless}}
-                {{/each}}
-            </ul>
-        </div>
-        <div>
-            <h2>Devoured:</h2>
+                <input class="radio" type="checkbox" id="one" />1950s</label>
 
-            <ul>
-                {{#each burgers}}
-                {{#if devour}}
-                {{> burgers/burger-block devour=false}}
-                {{/if}}
-                {{/each}}
-            </ul>
-        </div>
-        
+                <input class="radio" type="checkbox" id="two" />1960s</label>
+
+                <input class="radio" type="checkbox" id="three" />1970s</label>
+
+                <input class="radio" type="checkbox" id="four" />1980s</label>
+
+                <input class="radio" type="checkbox" id="five" />1990s</label>
+
+                <input class="radio" type="checkbox" id="six" />2000s</label>
+
+                <input class="radio" type="checkbox" id="seven" />2010s</label>
+            </div>
+            </div>
+        </form>
+        <form>
+            <h3 style="color:rgb(7, 185, 7);">Country/state</h3>
+            <div class="select"></div>
+            <div class="selectBox" onclick="showCheckboxes1()">
+                <select size="1">
+                    <option>Select an option</option>
+                </select>
+                <div class="overSelect"></div>
+            </div>
+            <div id="checkboxes1">
+                <label for="1">
+                    <input class="radio" type="checkbox" id="1" />AL</label>
+                <label for="2">
+                    <input class="radio" type="checkbox" id="2" />AK</label>
+                <label for="3">
+                    <input class="radio" type="checkbox" id="3" />AZ</label>
+                <label for="4">
+                    <input class="radio" type="checkbox" id="4" />AR</label>
+                <label for="5">
+                    <input class="radio" type="checkbox" id="5" />CA</label>
+                <label for="6">
+                    <input class="radio" type="checkbox" id="6" />CO</label>
+                <label for="7">
+                    <input class="radio" type="checkbox" id="6" />CT</label>
+                <label for="8">
+                    <input class="radio" type="checkbox" id="8" />DE</label>
+                <label for="9">
+                    <input class="radio" type="checkbox" id="9" />FL</label>
+                <label for="10">
+                    <input class="radio" type="checkbox" id="10" />GA</label>
+                <label for="11">
+                    <input class="radio" type="checkbox" id="11" />HI</label>
+                <label for="12">
+                    <input class="radio" type="checkbox" id="12" />IL</label>
+                <label for="13">
+                    <input class="radio" type="checkbox" id="13" />IN</label>
+                <label for="14">
+                    <input class="radio" type="checkbox" id="14" />IA</label>
+                <label for="15">
+                    <input class="radio" type="checkbox" id="15" />KS</label>
+                <label for="16">
+                    <input class="radio" type="checkbox" id="16" />LA</label>
+                <label for="17">
+                    <input class="radio" type="checkbox" id="17" />ME</label>
+                <label for="18">
+                    <input class="radio" type="checkbox" id="18" />MD</label>
+                <label for="19">
+                    <input class="radio" type="checkbox" id="19" />MA</label>
+                <label for="20">
+                    <input class="radio" type="checkbox" id="20" />MI</label>
+                <label for="21">
+                    <input class="radio" type="checkbox" id="21" />MN</label>
+                <label for="22">
+                    <input class="radio" type="checkbox" id="22" />MS</label>
+                <label for="23">
+                    <input class="radio" type="checkbox" id="23" />MO</label>
+                <label for="24">
+                    <input class="radio" type="checkbox" id="24" />MT</label>
+                <label for="25">
+                    <input class="radio" type="checkbox" id="25" />NE</label>
+                <label for="26">
+                    <input class="radio" type="checkbox" id="26" />NV</label>
+                <label for="27">
+                    <input class="radio" type="checkbox" id="27" />NH</label>
+                <label for="28">
+                    <input class="radio" type="checkbox" id="28" />NJ</label>
+                <label for="29">
+                    <input class="radio" type="checkbox" id="29" />NM</label>
+                <label for="30">
+                    <input class="radio" type="checkbox" id="30" />NY</label>
+                <label for="31">
+                    <input class="radio" type="checkbox" id="31" />NC</label>
+                <label for="32">
+                    <input class="radio" type="checkbox" id="32" />ND</label>
+                <label for="33">
+                    <input class="radio" type="checkbox" id="33" />OH</label>
+                <label for="34">
+                    <input class="radio" type="checkbox" id="34" />OK</label>
+                <label for="35">
+                    <input class="radio" type="checkbox" id="35" />OR</label>
+                <label for="36">
+                    <input class="radio" type="checkbox" id="36" />PA</label>
+                <label for="37">
+                    <input class="radio" type="checkbox" id="37" />RI</label>
+                <label for="38">
+                    <input class="radio" type="checkbox" id="38" />SC</label>
+                <label for="39">
+                    <input class="radio" type="checkbox" id="39" />SD</label>
+                <label for="40">
+                    <input class="radio" type="checkbox" id="40" />TN</label>
+                <label for="41">
+                    <input class="radio" type="checkbox" id="41" />UT</label>
+                <label for="42">
+                    <input class="radio" type="checkbox" id="42" />VT</label>
+                <label for="43">
+                    <input class="radio" type="checkbox" id="43" />VA</label>
+                <label for="44">
+                    <input class="radio" type="checkbox" id="44" />WA</label>
+                <label for="45">
+                    <input class="radio" type="checkbox" id="45" />WV</label>
+                <label for="46">
+                    <input class="radio" type="checkbox" id="46" />WI</label>
+                <label for="47">
+                    <input class="radio" type="checkbox" id="47" />WY</label>
+            </div>
+            </div>
+        </form>
+
     </aside>
     <div id="map"></div>
     <img src="../images/ufo-flying-saucer-animated-gif-8.gif" alt="Alien1" id="alien1">
@@ -134,7 +214,8 @@
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="../js/googlemapapi.js"></script>
     <script src="../js/animation.js"></script>
-    <script src="../js/writecoord.js"></script>
+    <!-- <script src="../js/writecoord.js"></script> -->
+
 </body>
 
 </html>
