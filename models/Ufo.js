@@ -1,6 +1,6 @@
 
 module.exports = function (sequelize, DataTypes) {
-  var User = sequelize.define("Ufo", {
+  var Ufo = sequelize.define("Ufo", {
     datetime: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -47,5 +47,5 @@ module.exports = function (sequelize, DataTypes) {
     },
   });
 
-  return User;
+  return Ufo;
 };

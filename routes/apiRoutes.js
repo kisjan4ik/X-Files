@@ -1,10 +1,17 @@
 const router = require("express").Router();
-const express = require("express")
+var db = require("../models");
 // use this file to code your API routes
 
-module.exports = function(app) {
-app.get("/", function(req, res, next) {
+router.get("/", function(req, res, next) {
     res.render("#")
 })
-}
-// module.exports = router;
+// console.log(db);
+
+router.get("/sighting", function(req, res){
+db.Ufo.findAll({})
+    .then(function(response){
+        console.log(response);
+        res.json(response)
+    })
+})
+module.exports = router;
