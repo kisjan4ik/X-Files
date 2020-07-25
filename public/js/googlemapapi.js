@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 "use strict";
 var locations = [];
 let map;
@@ -10,7 +11,7 @@ $.ajax({
   for (let i = 0; i < 1001; i++) {
     var currentlocation = [];
     currentlocation = [`${data[i].latitude}`, data[i].longitude, data[i].city.toUpperCase(), data[i].comments];
-    locations.push(currentlocation)
+    locations.push(currentlocation);
   } return locations;
   // console.log(locations);
 }).then(function (locations) {
