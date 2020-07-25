@@ -1,3 +1,5 @@
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable indent */
 /* eslint-disable linebreak-style */
@@ -26,6 +28,29 @@ router.get("/sightings", function (req, res) {
             res.json(response);
         });
 });
+
+// Get route for user login
+router.get("/user/login", function (req, res) {
+    //findAll returns all entries for our table when used with no options
+    db.Ufo.findAll({})
+        .then(function (response) {
+            //We have access to the todos as an argument inside of the callback function
+            console.log(response);
+            res.json(response);
+        });
+});
+
+// Get route for user register
+router.get("/user/register", function (req, res) {
+    //findAll returns all entries for our table when used with no options
+    db.Ufo.findAll({})
+        .then(function (response) {
+            //We have access to the todos as an argument inside of the callback function
+            console.log(response);
+            res.json(response);
+        });
+});
+
 
 //POST ROUTE FOR SAVING NEW ENCOUNTERS TO OUR DATABASE
 // router.post("/api/sightings", function(req, res) {
