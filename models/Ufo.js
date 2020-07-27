@@ -23,7 +23,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     duration_seconds: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     duration_hours_min: {
       type: DataTypes.STRING,
