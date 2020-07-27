@@ -10,12 +10,14 @@ let rfacts = {
         "Alien sightings have been reported in many nuclear power plants"
     ]
 };
-
+console.log(rfacts);
 
 $(document).ready(function () {   
     let factstemplate = $("#alientemplate").html;
     let compliedfactstemplate = Handlebars.compile(factstemplate);
     $("#randomfacts").html(compliedfactstemplate(facts));
+    console.log(facts);
+    
     //create new array for quote to be pushed to
     // let rfactarr = [];
     // console.log(results);

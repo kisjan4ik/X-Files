@@ -1,96 +1,102 @@
-    <div class="container-fluid">
-        <div class="row bg-dark">
-            <div class="col-md-8 p-0">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-2">
-                    <a class="navbar-brand ml-3" href="/">X-Files_Dashboard</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link text-success" href="/">Dashboard</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/sightings">UFO Sightings</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/auth/logout">Logout</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <div class="col-md-4 text-right pt-2">
-                <a class="text-white pr-0 mr-3" href="/"><span class="userName text-success"></span>
-                    <i class="fas fa-user-circle fa-2x text-white mt-1 ml-2 mb-2 text-success"></i></a>
-            </div>
+<div class="container-fluid">
+    <div class="row bg-dark">
+        <div class="col-md-8 p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-2">
+                <a class="navbar-brand ml-3" href="/">X-Files_Dashboard</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-success" href="/">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/sightings">UFO Sightings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/auth/logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="col-md-4 text-right pt-2">
+            <a class="text-white pr-0 mr-3" href="/"><span class="userName text-success"></span>
+                <i class="fas fa-user-circle fa-2x text-white mt-1 ml-2 mb-2 text-success"></i></a>
         </div>
     </div>
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-12 mx-auto text-center">
-                <h1>Welcome back {{ user }}</h1>
-            </div>
-        </div>
-    </div>
-    <div>
-        <div class="jumbotron jumbotron-fluid grey darken-3">
-            <div class="container">
-                {{!-- <h1 class="display-4 text-center text-success">Welcome back {{{ user }}}</h1> --}}
-                <p class="lead text-center">Here we will use handlebars to append dynamic info</p>
-            </div>
-        </div>
-    </div>
+</div>
+<div class="container mt-4">
     <div class="row">
-        <div class="col s12 m6">
-            <div class="card small grey darken-3">
-                <div class="card-content green-text">
-                    <span class="card-title green-text">Alien questions</span>
-                    <p>Here we will use handlebars to append dynamic info</p>
-                </div>
-                <div class="card-action">
-                    <a href="#">possible link to site where we get info?</a>
-                    <a href="#">possible link to site where we get info?</a>
-                </div>
+        <div class="col-md-12 mx-auto text-center roundedge">
+            <h1 id="title">X-Files</h1>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="jumbotron jumbotron-fluid grey darken-3">
+        <div class="container">
+            <h1 class="display-4 text-center text-success">Welcome back <b><i>(user)</i></b></h1>
+            <p class="lead text-center"><i>Handlebars will deliver a dynamic quote each time a user logs in</i></p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 m6">
+        <div class="card small grey darken-3">
+            <div class="card-content green-text">
+                <span class="card-title green-text"><b>Brief explination:</b></span>
+                <p>X-Files is an satirical App that allows a user to search for recorded UFO Sightings. It allows to choose the sighting by location,time frame and other options and read the witness' report.</p>
+                <br>
+                <hr>
+                Please Feel free to take a look at the websites official Github: <a href="https://github.com/kisjan4ik/X-Files">X-Files</a>
+            </div>
+            <div class="card-action">
+                <a href="https://github.com/kisjan4ik" target="_blank">Olena's Github</a>
+                <a href="https://github.com/CameronG88" target="_blank">Cameron's Github</a>
+                <a href="https://github.com/EpicGibbon" target="_blank">Anthony's Github</a>
             </div>
         </div>
-        <div class="col s12 m6">
-            <div class="card small grey darken-3">
-              <div class="card-content green-text">
-                <span class="card-title green-text">Alien facts</span>
-                <p id="randomfacts">{{this}}.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">possible link to site where we get info?</a>
-                <a href="#">possible link to site where we get info?</a>
-              </div>
-            </div>
-          </div>
-          <div class="col s12 m6">
-            <div class="card small grey darken-3">
-              <div class="card-content green-text">
-                <span class="card-title green-text">area 51</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
     </div>
+    <div class="col s12 m6">
+        <div class="card small grey darken-3">
+            <div class="card-content green-text">
+                <span class="card-title green-text"><b>Alien facts:</b></span>
+                <p id="randomfacts">{{ this }}</p>
+            </div>
+            <div class="card-action">
+                <a href="https://www.archives.gov/research/immigration/aliens">A-Files</a>
+                <a href="https://www.nationalgeographic.com/culture/topics/reference/why-two-million-storm-area-51/">A
+                    Look into are we alone</a>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m6">
+        <div class="card small grey darken-3">
+            <div class="card-content green-text">
+                <span class="card-title green-text"><b>Extraterrestial sightings:</b></span>
+                <p>Images will append here</p>
+            </div>
+            <div class="card-action">
+                <a href="https://www.history.com/shows/ancient-aliens/pictures/photographic-evidence/ancient-aliens-moai-easter-island">Check out some other additional info</a>
+                <a href="https://www.telegraph.co.uk/news/picturegalleries/howaboutthat/3447508/UFO-sightings-140-years-of-UFO-pictures.html">See UFO images</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <style>
     body {
-    background-image: url(/images/Putx8q.jpg); 
-    background-size: cover;
+        background-image: url(/images/Putx8q.jpg);
+        background-size: cover;
     }
 
     .container-fluid {
         padding: 0px;
     }
+    #title {
+   color: rgb(7, 185, 7)
+}
 </style>
-
