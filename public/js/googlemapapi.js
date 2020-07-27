@@ -371,22 +371,19 @@ function startPage() {
         icon: alien,
         map: map,
         description: locations[i][3],
-      });
-      marker.addListener("click", (function (req, res) {
+      }); marker.addListener("click", (function (req, res) {
         var infowindow = new google.maps.InfoWindow({
-          content: `<div class="infobox"> location: ${req.title} <br>
-            sighting info: ${req.description}</div>`
+          content: `<div class="infobox"> location: ${marker.title} <br>
+            sighting info: ${marker.description}</div>`
         });
-
-        return function () {
-          infowindow.open(map, marker);
-        };
+        infowindow.open(map, marker);
       }));
-    } return locations;
-  })
+    }
+  }); return locations;
 }
 
-function stateSearch(){
+
+function stateSearch() {
   locations = [];
   var selected = $("#exampleSelect2").find('option:selected');
   var state = $("#exampleSelect2").val().toLowerCase();
@@ -775,6 +772,6 @@ function stateSearch(){
   })
 }
 $("#searchBtn").on("click", function () {
- stateSearch();
+  stateSearch();
 });
 startPage();
