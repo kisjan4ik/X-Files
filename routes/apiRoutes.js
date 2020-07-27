@@ -9,7 +9,7 @@ const randomfacts = require("../public/js/randomfacts");
 
 // use this file to code your API routes
 //random alien facts data
-    
+
 //Get route to bring user to main dashboard
 router.get("/", function (req, res) {
     res.render("dashboard", rfacts[0]);
@@ -34,8 +34,8 @@ router.get("/user/register", function (req, res) {
         });
 });
 
-router.get("/api/randomfacts/", function(req, res) {
-res.json(randomfacts);
+router.get("/api/randomfacts/", function (req, res) {
+    res.json(randomfacts);
 });
 // Get route for getting all of the UFO sightings
 router.get("/sightings", function (req, res) {
@@ -45,6 +45,17 @@ router.get("/sightings", function (req, res) {
             res.json(response);
         });
 });
+
+router.get("/sightings/:state", function (req, res) {
+    //findAll returns all entries for our table when used with no options
+    db.Ufo.findAll({
+        where: {
+            state: req.params.state
+        }
+    }).then(function (response) {
+        res.json(response);
+    });
+})
 
 //POST ROUTE FOR SAVING NEW ENCOUNTERS TO OUR DATABASE
 // router.post("/api/sightings", function(req, res) {
@@ -60,30 +71,30 @@ router.get("/sightings", function (req, res) {
 // });
 //Delete Route for deleting encounters from our application. We can get the id of the todo 
 //to be deleted from the req.params.id
-router.delete("/api/sightings/:id", function(req, res) {
+router.delete("/api/sightings/:id", function (req, res) {
     //We just have to specify which ufo encounter we want to destory with "where"
     db.Ufo.destroy({
         where: {
             id: req.params.id
         }
-    }).then (function (dbUfo) {
+    }).then(function (dbUfo) {
         res.json(dbUfo);
     });
 });
 
 //PUT route for updating UFOs. We can get the updated ufo data from the req.body
-router.put("/api/sightings", function(req, res) {
-//Update takes in an object describing the properties we want to update,
-//and we use where to describe which objects we want to update
-db.Ufo.update({
-    text: req.body.text
-}, {
-    where: {
-    id: req.body.id
-    }
-}).then(function(dbUfo) {
-    res.json(dbUfo);
-});
+router.put("/api/sightings", function (req, res) {
+    //Update takes in an object describing the properties we want to update,
+    //and we use where to describe which objects we want to update
+    db.Ufo.update({
+        text: req.body.text
+    }, {
+        where: {
+            id: req.body.id
+        }
+    }).then(function (dbUfo) {
+        res.json(dbUfo);
+    });
 });
 
 
