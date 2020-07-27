@@ -39,7 +39,7 @@
     <div class="jumbotron jumbotron-fluid grey darken-3">
         <div class="container">
             <h1 class="display-4 text-center text-success">Welcome back <b><i>(user)</i></b></h1>
-            <p class="lead text-center"><i>Handlebars will deliver a dynamic quote each time a user logs in</i></p>
+            <p class="lead text-center"><i>{{quote}}</i></p>
         </div>
     </div>
 </div>
@@ -64,7 +64,9 @@
         <div class="card small grey darken-3">
             <div class="card-content green-text">
                 <span class="card-title green-text"><b>Alien facts:</b></span>
-                <p id="randomfacts">{{ this }}</p>
+                <div id="randomfacts">
+                    <p>{{fact}}</p>
+                </div>
             </div>
             <div class="card-action">
                 <a href="https://www.archives.gov/research/immigration/aliens">A-Files</a>
@@ -76,9 +78,10 @@
     <div class="col s12 m6">
         <div class="card small grey darken-3">
             <div class="card-content green-text">
-                <span class="card-title green-text"><b>Extraterrestial sightings:</b></span>
-                <p>Images will append here</p>
+                <span class="card-title green-text">
+                <img src="{{img}}" alt="Aliens" height="300" width="500">
             </div>
+            <br>
             <div class="card-action">
                 <a href="https://www.history.com/shows/ancient-aliens/pictures/photographic-evidence/ancient-aliens-moai-easter-island">Check out some other additional info</a>
                 <a href="https://www.telegraph.co.uk/news/picturegalleries/howaboutthat/3447508/UFO-sightings-140-years-of-UFO-pictures.html">See UFO images</a>
