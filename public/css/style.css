@@ -29,11 +29,22 @@
           margin-top:10px;
         }
 
-        #alien1 {
-            position:fixed;
-            right:0px;
-            bottom:0px;
-        }
+      
+    #sighting {
+      font-size: small;
+      line-height: 10px;
+      margin-top: 15px;
+  }
+
+  #add {
+      margin-top: 15px;
+  }
+
+  #alien1 {
+      z-index: 111;
+      position:fixed;
+      right:0px;
+  }
 
 .selectBox {
   position: relative;
