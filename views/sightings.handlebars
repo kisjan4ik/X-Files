@@ -31,9 +31,9 @@
 </div>
 <div class="container mt-4">
     <div class="row">
-        <div  id="header" class="col-md-6 mx-auto">
-            <h1 style="color:rgb(7, 185, 7); font-size:38px;">UFO Sightings <img src="/images/ufo-animated-gif.gif" alt="Alien"
-                    style="width:70px; height:70px"></h1>
+        <div id="header" class="col-md-6 mx-auto">
+            <h1 style="color:rgb(7, 185, 7); font-size:38px;">UFO Sightings <img src="/images/ufo-animated-gif.gif"
+                    alt="Alien" style="width:70px; height:70px"></h1>
         </div>
     </div>
 
@@ -109,17 +109,35 @@
                 <option>WY</option>
             </select>
         </div>
+        <img src="/images/ufo-flying-saucer-animated-gif-11.gif" alt="Alien1" id="alien1">
+        <div class="col s12 m6" id="sighting">
+            <div class="card">
+                <div class="card-content green-text">
+                    <div class="form-group" >
+                        <span class="card-title green-text"><b>Want to add your own experience?</b></span>
+                        <input type="text" class="form-control" name="datetime"> Enter a date of your sighting:<br>
+                        <input type="text" class="form-control" name="city">Enter a name of the city:<br>
+                        <input type="text" class="form-control" name="state">Enter a state:<br>
+                        <input type="text" class="form-control" name="shape"> What shape the object had?<br>
+                        <input type="text" class="form-control" name="duration_hours_min">How long did you see it?
+                        (minutes)<br>
+                        <input type="text" class="form-control" name="comments">Please briefly describe your
+                        sighting:<br>
+                        <button type="submit" class="btn" id="add">CONFIRM </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
 </aside>
 <div id="map"></div>
-<img src="/images/ufo-flying-saucer-animated-gif-8.gif" alt="Alien1" id="alien1">
 
 <style>
     body {
         background-color: black;
 
     }
-    
+
     .container-fluid {
         padding: 0px;
     }
