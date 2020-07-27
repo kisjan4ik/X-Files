@@ -38,7 +38,7 @@
 <div>
     <div class="jumbotron jumbotron-fluid grey darken-3">
         <div class="container">
-            <h1 class="display-4 text-center text-success">Welcome back <b><i>(user)</i></b></h1>
+            <h1 class="display-4 text-center text-success"><b><i>Welcome back</i></b></h1>
             <p class="lead text-center"><i>{{quote}}</i></p>
         </div>
     </div>
@@ -81,7 +81,7 @@
         <div class="card small grey darken-3">
             <div class="card-content green-text">
                 <span class="card-title green-text">
-                <img src="{{img}}" alt="Aliens" height="300" width="500">
+                    <img class="imgLoader" src="{{img}}" alt="Aliens" height="300" width="500">
             </div>
             <br>
             <div class="card-action">
@@ -95,17 +95,110 @@
         </div>
     </div>
 </div>
-    <style>
-        body {
-            background-image: url(/images/Putx8q.jpg);
-            background-size: cover;
+<div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+</div>
+<style>
+    body {
+        background-image: url(/images/Putx8q.jpg);
+        background-size: cover;
+    }
+
+    .container-fluid {
+        padding: 0px;
+    }
+
+    #title {
+        color: rgb(7, 185, 7)
+    }
+
+    .loader-wrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #242f3f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #eee;
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .loader {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        border: 4px solid #Fff;
+        animation: loader 2s infinite ease;
+    }
+
+    .loader-inner {
+        vertical-align: top;
+        display: inline-block;
+        width: 100%;
+        background-color: rgb(7, 185, 7);
+        animation: loader-inner 2s infinite ease-in;
+    }
+
+    @keyframes loader {
+        0% {
+            transform: rotate(0deg);
         }
 
-        .container-fluid {
-            padding: 0px;
+        25% {
+            transform: rotate(180deg);
         }
 
-        #title {
-            color: rgb(7, 185, 7)
+        50% {
+            transform: rotate(180deg);
         }
-    </style>
+
+        75% {
+            transform: rotate(360deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes loader-inner {
+        0% {
+            height: 0%;
+        }
+
+        25% {
+            height: 0%;
+        }
+
+        50% {
+            height: 100%;
+        }
+
+        75% {
+            height: 100%;
+        }
+
+        100% {
+            height: 0%;
+        }
+    }
+</style>
+<script type="text/javascript" src="/js/loader.js"></script>

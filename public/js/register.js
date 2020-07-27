@@ -1,4 +1,4 @@
-/* eslint-disable linebreak-style */
+
 
 const emailInputReg = document.querySelector("#emailInputReg");
 const passwordInputReg = document.querySelector("#passwordInputReg");
