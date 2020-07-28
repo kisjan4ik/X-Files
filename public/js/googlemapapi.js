@@ -10,12 +10,16 @@ function startPage() {
     url: "/api/sightings",
     method: "GET"
   }).then(function (data) {
-    for (let i = 0; i < 1001; i++) {
-      var currentlocation = [];
-      currentlocation = [`${data[i].latitude}`, data[i].longitude, data[i].city.toUpperCase(), data[i].comments];
-      locations.push(currentlocation);
+    console.log(data);
+    var length = data.length;
+    for (let g = 0; g < length; g++) {
+      var date = parseInt(data[g].datetime);
+      if (date >= 2014) {
+        var currentlocation = [];
+        currentlocation = [`${data[g].latitude}`, data[g].longitude, data[g].city.toUpperCase(), data[g].comments];
+        locations.push(currentlocation);
+      }
     } return locations;
-    // console.log(locations);
   }).then(function (locations) {
     map = new google.maps.Map(document.getElementById("map"), {
       center: {
@@ -366,7 +370,7 @@ function startPage() {
     for (let i = 0; i < locations.length; i++) {
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(locations[i][0], locations[i][1]),
-        animation: google.maps.Animation.DROP,
+        // animation: google.maps.Animation.BOUNCE,
         title: locations[i][2],
         icon: alien,
         map: map,
