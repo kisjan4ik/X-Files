@@ -375,15 +375,16 @@ function startPage() {
         icon: alien,
         map: map,
         description: locations[i][3],
-      }); marker.addListener("click", (function (req, res) {
-        var infowindow = new google.maps.InfoWindow({
-          content: `<div class="infobox"> location: ${marker.title} <br>
-            sighting info: ${marker.description}</div>`
-        });
-        infowindow.open(map, marker);
-      }));
-    }
-  }); return locations;
+      }); google.maps.event.addListener(marker, 'click', (function (marker, i) {
+        return function () {
+          infowindow.close();
+          infowindow.setContent(`<div class= "infobox"> Siting location: ${locations[i][0]} <br><br>
+            Details: ${locations[i][3]} </div>`);
+          infowindow.open(map, marker);
+        };
+      })(marker, i));
+    }var infowindow = new google.maps.InfoWindow;
+  });
 }
 
 
@@ -756,24 +757,21 @@ function stateSearch() {
     for (let i = 0; i < locations.length; i++) {
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(locations[i][0], locations[i][1]),
-        animation: google.maps.Animation.DROP,
+        // animation: google.maps.Animation.BOUNCE,
         title: locations[i][2],
         icon: alien,
         map: map,
         description: locations[i][3],
-      });
-      marker.addListener("click", (function (req, res) {
-        var infowindow = new google.maps.InfoWindow({
-          content: `<div class="infobox"> location: ${req.title} <br>
-            sighting info: ${req.description}</div>`
-        });
-
+      }); google.maps.event.addListener(marker, 'click', (function (marker, i) {
         return function () {
+          infowindow.close();
+          infowindow.setContent(`<div class= "infobox"> Siting location: ${locations[i][0]} <br><br>
+            Details: ${locations[i][3]} </div>`);
           infowindow.open(map, marker);
         };
-      }));
-    } return locations;
-  })
+      })(marker, i));
+    }var infowindow = new google.maps.InfoWindow;
+  });
 }
 $("#searchBtn").on("click", function () {
   stateSearch();
