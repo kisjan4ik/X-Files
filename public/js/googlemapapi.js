@@ -16,7 +16,7 @@ function startPage() {
     var length = data.length;
     for (let g = 0; g < length; g++) {
       var date = parseInt(data[g].datetime);
-      if (date >= 2014) {
+      if (date >= 2003) {
         var currentlocation = [];
         currentlocation = [`${data[g].latitude}`, data[g].longitude, data[g].city.toUpperCase(), data[g].comments];
         locations.push(currentlocation);
