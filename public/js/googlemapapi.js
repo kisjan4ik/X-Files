@@ -383,7 +383,7 @@ function startPage() {
       google.maps.event.addListener(marker, 'click', (function (marker, i) {
         return function () {
           infowindow.close();
-          infowindow.setContent(`<div class= "infobox"> Siting location: ${locations[i][0]} <br><br>
+          infowindow.setContent(`<div class= "infobox"> Siting location: ${locations[i][2]} <br><br>
             Details: ${locations[i][3]} </div>`);
           infowindow.open(map, marker);
         };
