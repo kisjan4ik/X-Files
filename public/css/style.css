@@ -80,7 +80,10 @@
   color: rgb(7, 185, 7);
   font-size: large;
 }
-.gm-style-iw-d{
-  padding: 0;
-  margin: 0;
+.divTitle {
+  font-size: xx-large;
+  text-align: center;
+}
+p {
+  font-size: large;
 }
