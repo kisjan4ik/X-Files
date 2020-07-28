@@ -6,7 +6,7 @@
 const router = require("express").Router();
 var db = require("../models");
 const randomfacts = require("../public/js/randomfacts");
-
+var Ufo = require("..//models/Ufo.js");
 // use this file to code your API routes
 //random alien facts data
 
@@ -55,20 +55,26 @@ router.get("/sightings/:state", function (req, res) {
     }).then(function (response) {
         res.json(response);
     });
-})
+});
 
-//POST ROUTE FOR SAVING NEW ENCOUNTERS TO OUR DATABASE
-// router.post("/api/sightings", function(req, res) {
-//     //Create takes in an argument of an object describing the item we want to insert
-//     //into our table
-//     db.Ufo.create({
-//         text: req.body.text
-//     }).then(function(dbUfo) {
-//             //logging out our result to see what we're working with
-//             console.log(dbUfo);
-//             res.json(dbUfo);
-//         });
-// });
+router.post("/sightings", function(req, res) {
+    
+    Ufo.create([{
+           datetime: newSighting.datetime,
+           city: newSighting.city,
+           state: newSighting.state,
+           country: "US",
+           shape: newSighting.shape,
+           duration_hours_min: newSighting.duration_hours_min,
+           comments: newSighting.comments,
+           latitude: 39.1299577,
+           longitude:  -96.44058
+         }],
+    res.status(204).end()
+    
+    );
+    console.log(Ufo);
+ });
 //Delete Route for deleting encounters from our application. We can get the id of the todo 
 //to be deleted from the req.params.id
 router.delete("/api/sightings/:id", function (req, res) {

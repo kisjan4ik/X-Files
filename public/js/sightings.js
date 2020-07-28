@@ -1,33 +1,33 @@
-$(document).ready(function () {
-  var dateTime = $("#datetime");
-  var city = $("#city");
-  var state = $("#state");
-  var shape = $("#shape");
-  var duration = $("#duration_hours_min");
-  var comments = $("#comments");
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable linebreak-style */
+$("#add").on("click", function(event){
 
-  $(document).on("submit", "#sighting", createNewSighting);
+  event.preventDefault();
 
-  getSighting();
-
-  function createNewSighting(event) {
-    event.preventDefault();
-
-    // eslint-disable-next-line no-use-before-define
-    addSighting({
-      datetime: dateTime,
-      city: city,
-      state: state,
-      country: "US",
-      shape: shape,
-      duration_hours_min: duration,
-      comments: comments,
-      latitude: 39.1299577,
-      longitude:  -96.44058
+  var newSighting = {
+    datetime: $("#datetime").val().trim(),
+    state: $("#state").val().trim(),
+    country: "US",
+    shape: $("#shape").val().trim(),
+    duration_hours_min: $("#duration_hours_min").val().trim(),
+    comments: $("#comments").val().trim(),
+    latitude: 39.1299577,
+    longitude: -96.44058   
+  };
+  console.log(newSighting);
+  $.ajax("/sightings",{
+    type: "POST",
+    data: newSighting
+  })
+    .then(function(){
+      console.log("Your sighting is added");
+      location.reload();
     });
-  }
-  function addSighting(sightingData) {
-    $.post("api/sightings",sightingData)
-      .then(getSighting);
-  }
+    
+  // empty each input box by replacing the value with an empty string
+  $("#datetime").val("");
+  $("#state").val("");
+  $("#shape").val("");
+  $("#duration_hours_min").val("");
+  $("#comments").val("");
 });
