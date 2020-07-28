@@ -10,7 +10,6 @@ function startPage() {
     url: "/api/sightings",
     method: "GET"
   }).then(function (data) {
-    console.log(data);
     var length = data.length;
     for (let g = 0; g < length; g++) {
       var date = parseInt(data[g].datetime);
@@ -370,7 +369,6 @@ function startPage() {
     for (let i = 0; i < locations.length; i++) {
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(locations[i][0], locations[i][1]),
-        // animation: google.maps.Animation.BOUNCE,
         title: locations[i][2],
         icon: alien,
         map: map,
@@ -383,7 +381,7 @@ function startPage() {
           infowindow.open(map, marker);
         };
       })(marker, i));
-    }var infowindow = new google.maps.InfoWindow;
+    } var infowindow = new google.maps.InfoWindow;
   });
 }
 
@@ -395,18 +393,15 @@ function stateSearch() {
   var stateLat = selected[0].dataset.lat;
   var stateLon = selected[0].dataset.lon;
   var searchUrl = "/api/sightings/" + state;
-  console.log(stateLat + stateLon);
   $.ajax({
     url: searchUrl,
     method: "GET"
   }).then(function (data) {
-    console.log(searchUrl);
     for (let i = 0; i < data.length; i++) {
       var searchLocations = [];
       searchLocations = [`${data[i].latitude}`, data[i].longitude, data[i].city.toUpperCase(), data[i].comments];
       locations.push(searchLocations);
     } return locations;
-    // console.log(locations);
   }).then(function (locations) {
     map = new google.maps.Map(document.getElementById("map"), {
       center: {
@@ -757,7 +752,6 @@ function stateSearch() {
     for (let i = 0; i < locations.length; i++) {
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(locations[i][0], locations[i][1]),
-        // animation: google.maps.Animation.BOUNCE,
         title: locations[i][2],
         icon: alien,
         map: map,
@@ -770,7 +764,7 @@ function stateSearch() {
           infowindow.open(map, marker);
         };
       })(marker, i));
-    }var infowindow = new google.maps.InfoWindow;
+    } var infowindow = new google.maps.InfoWindow;
   });
 }
 $("#searchBtn").on("click", function () {
