@@ -8,7 +8,7 @@ const rowAlertReg = document.querySelector(".alertAppendReg");
 const divAlertReg = document.createElement("div");
 
 // Function to handle the form
-const regSubmit = async (e) => {
+const handleSubmit = async (e) => {
   console.log("yo");
   e.preventDefault();
   // Create Object to be used on the Regiter request with information from the form
@@ -52,5 +52,6 @@ const regSubmit = async (e) => {
     window.location.href = "/";
   }
 };
+
 // Click event to submit the form
-submitBtnReg.addEventListener("click", regSubmit);
+submitBtnReg.addEventListener("click", handleSubmit);

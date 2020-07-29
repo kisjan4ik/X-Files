@@ -5,6 +5,7 @@ const submitBtn = document.querySelector("#submitBtn");
 const rowAlert = document.querySelector(".alertAppend");
 const divAlert = document.createElement("div");
 
+
 // Function to handle the form
 const handleLogin = async (e) => {
   e.preventDefault();
