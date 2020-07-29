@@ -52,5 +52,6 @@ const handleSubmit = async (e) => {
     window.location.href = "/";
   }
 };
+
 // Click event to submit the form
 submitBtnReg.addEventListener("click", handleSubmit);
