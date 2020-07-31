@@ -5,8 +5,9 @@ const submitBtn = document.querySelector("#submitBtn");
 const rowAlert = document.querySelector(".alertAppend");
 const divAlert = document.createElement("div");
 
+
 // Function to handle the form
-const handleSubmit = async (e) => {
+const handleLogin = async (e) => {
   e.preventDefault();
   // Create Object with information from the form
   const userObj = {
@@ -35,4 +36,4 @@ const handleSubmit = async (e) => {
   }
 };
 // Click event to submit the form
-submitBtn.addEventListener("click", handleSubmit);
+submitBtn.addEventListener("click", handleLogin);

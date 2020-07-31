@@ -6,7 +6,7 @@
 const router = require("express").Router();
 var db = require("../models");
 const randomfacts = require("../public/js/randomfacts");
-var Ufo = require("..//models/Ufo.js");
+// var Ufo = require("..//models/Ufo.js");
 // use this file to code your API routes
 //random alien facts data
 
@@ -59,21 +59,25 @@ router.get("/sightings/:state", function (req, res) {
 
 router.post("/sightings", function(req, res) {
     
-    Ufo.create([{
-           datetime: newSighting.datetime,
-           city: newSighting.city,
-           state: newSighting.state,
-           country: "US",
-           shape: newSighting.shape,
-           duration_hours_min: newSighting.duration_hours_min,
-           comments: newSighting.comments,
-           latitude: 39.1299577,
-           longitude:  -96.44058
-         }],
-    res.status(204).end()
+    db.Sighting.create({
+           date: req.body.date,
+           city: req.body.city,
+           state: req.body.state,
+           shape: req.body.shape,
+           duration_hours_min: req.body.duration_hours_min,
+           comments: req.body.comments,
+           
+         },
+    // res.status(204).end()
     
-    );
-    console.log(Ufo);
+    )
+    .then(function(data) {
+        res.json(data);
+    })
+    .catch(function(err){
+        throw err;
+    });
+
  });
 //Delete Route for deleting encounters from our application. We can get the id of the todo 
 //to be deleted from the req.params.id
